@@ -4,48 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.MedvedevKA.Sprint2.Task0.V15.Lib;
+using Tyuiu.MedvedevKA.Sprint2.Task2.V27.Lib;
 
-namespace Tyuiu.MedvedevKA.Sprint2.Task0.V15
+namespace Tyuiu.MedvedevKA.Sprint2.Task2.V27
 {
     class Program
     {
         static void Main(string[] args)
         {
-            DataService ds = new DataService();
-
-            int x = 3105;
-            int y = 275;
-            bool[] res = new bool[6];
-            res = ds.GetCompareOperations(x, y);
-
             Console.Title = "Спринт #2 | Выполнил: Медведев К. А. | ACОиУБ-23-3";
             //Длина строки 75 символов
             Console.WriteLine("**********************************************************************************************************************");
             Console.WriteLine("* Спринт #2                                                                                                          *");
-            Console.WriteLine("* Тема: Операции сравнения                                                                                           *");
-            Console.WriteLine("* Задание #0                                                                                                         *");
-            Console.WriteLine("* Вариант #15                                                                                                        *");
+            Console.WriteLine("* Тема: Алгоритмы разветвляющейся структуры                                                                          *");
+            Console.WriteLine("* Задание #2                                                                                                         *");
+            Console.WriteLine("* Вариант #27                                                                                                        *");
             Console.WriteLine("* Выполнил: Медведев Кирилл Андриянович | ACOиУБ-23-3                                                                *");
             Console.WriteLine("**********************************************************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                                                           *");
-            Console.WriteLine("* Написать программу из операций сравнений (==, !=, <, >, <=, >=, последовательность операций не должна нарушаться)  *");
-            Console.WriteLine("* и арифметических выражений, которая вернет логическую последовательность(массив):                                  *");
-            Console.WriteLine("* (False, False, True, True, False, False), при x = 3105, y = 275                                                    *");
+            Console.WriteLine("* Написать программу на, которая запрашивает целые значения с клавиатуры                                             *");
+            Console.WriteLine("* и вычисляет находится ли точка с координатами X,Y в заштрихованной области.                                        *");
             Console.WriteLine("**********************************************************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                                                                   *");
             Console.WriteLine("**********************************************************************************************************************");
 
-            Console.WriteLine("X = " + x);
-            Console.WriteLine("Y = " + y);
+            Console.WriteLine("Введите значение переменной X: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите значение переменной Y: ");
+            int y = Convert.ToInt32(Console.ReadLine());
+
+            DataService ds = new DataService();
+            bool res = ds.CheckDotInShadedArea(x, y);
 
             Console.WriteLine("**********************************************************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                                                                         *");
             Console.WriteLine("**********************************************************************************************************************");
-
-            for (int i=0; i<6; i++)
+            if (res)
             {
-                Console.WriteLine(res[i]);
+                Console.WriteLine("Точка находиться в заштрихованной области");
+            }
+            else
+            {
+                Console.WriteLine("Точка не находиться в заштрихованной области");
             }
 
             Console.ReadKey();

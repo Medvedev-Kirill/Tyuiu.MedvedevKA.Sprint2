@@ -22,7 +22,7 @@ namespace Tyuiu.MedvedevKA.Sprint2.Task1.V21
             bool[] res = new bool[6];
             res = ds.GetLogicOperations(a, b, c, d);
 
-            Console.Title = "Спринт #1 | Выполнил: Медведев К. А. | ACОиУБ-23-3";
+            Console.Title = "Спринт #2 | Выполнил: Медведев К. А. | ACОиУБ-23-3";
             //Длина строки 75 символов
             Console.WriteLine("************************************************************************************************************************");
             Console.WriteLine("* Спринт #2                                                                                                            *");
